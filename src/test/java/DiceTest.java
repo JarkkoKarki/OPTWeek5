@@ -1,18 +1,30 @@
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DiceTest {
+public class DiceTest {
 
     @Test
-    void rollDice() {
+    public void testRollDiceWithinRange() {
+        Dice dice = new Dice();
+        for (int i = 0; i < 100; i++) {
+            int value = dice.rollDice();
+            assertTrue(value >= 1 && value <= 6, "1-6");
+        }
     }
 
     @Test
-    void rollTwoDice() {
+    public void testRollTwoDiceReturnsBoolean() {
+        Dice dice = new Dice();
+        boolean result = dice.rollTwoDice();
+        assertNotNull(result);
     }
 
     @Test
-    void rollsUntilDouble() {
+    public void testRollsUntilDoubleEventuallySucceeds() {
+        Dice dice = new Dice();
+        int attempts = dice.rollsUntilDouble();
+        assertTrue(attempts >= 1);
     }
 }
