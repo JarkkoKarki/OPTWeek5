@@ -1,7 +1,8 @@
 
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
+
 
 public class DiceTest {
 
@@ -10,7 +11,7 @@ public class DiceTest {
         Dice dice = new Dice();
         for (int i = 0; i < 100; i++) {
             int value = dice.rollDice();
-            assertTrue(value >= 1 && value <= 6, "1-6");
+            assertTrue(value >= 1 && value <= 6);
         }
     }
 
